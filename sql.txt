@@ -1,0 +1,294 @@
+Select command 
+syntax-
+select * from table_name;
+*=for selecting all
+
+distinct 
+SELECT distinct Column_Name FROM table_name;
+
+where clause
+syntax 
+select Column_Name from table_name
+where condition;
+
+And ,Or, Not operator
+syntax
+select Column_Name from table_name
+where condition1 AND condition2;
+
+select Column_Name from table_name
+where condition1 OR condition2;
+
+select Column_Name from table_name
+where NOT condition;
+
+Order By operator
+
+syntax
+select Column_Name from table_name
+ORDER BY Column_Name;
+ 
+two conditions ASC or DESC
+
+select Column_Name from table_name
+ORDER BY Column_Name ASC;
+
+select Column_Name from table_name
+ORDER BY Column_Name DESC;
+
+between Operator
+
+select Column_Name from table_name
+where Column_Name between range_1 AND range_2;
+
+between Operator with text
+
+select Column_Name from table_name
+where Column_Name between String1 AND String2;
+
+in Operator 
+it is used to select multiple values of same column
+
+select Column_Name from table_name
+where Column_Name IN (String1,String2,String3)
+
+SQL for Beginners - Like Operator and Wildcard Characters
+
+We can use Like Operator and Wildcard Characters for Pattern matching needs 
+We can use them in the Where Clause Conditions
+Practical Demonstration:
+Select * from Customers;
+Select * from Customers Where Country Like '%a';
+Select * from Customers Where Country Like 'F%';
+Select * from Customers Where Country Like 'G%Y';
+Select * from Customers where Country like 'Mex%';
+Select * from Customers where country like '%nez%';
+Select * from Customers where country like '%Can%';
+Select * from Customers where country like '_weden';
+Select * from Customers where country like 'U_';
+Select * from Customers where country like '__A';
+Select * from Customers where country like 'M_x_c_';
+Select * from Customers where Country like 'Fin_a%';
+
+SQL for Beginners - Aliases for Table Column Names (As Keyword)
+
+While the records are retrieved these alias names provided for Column names will be displayed temporary in place of Original Column names
+Practical Demonstration:
+Select * from Categories;
+Select CategoryID,CategoryName from Categories;
+Select CategoryID as ID,CategoryName as Name from Categories;
+As is optional - Select CategoryID ID,CategoryName Name from Categories;
+Select CategoryID as [Category ID],CategoryName as [Category Name] from Categories;
+
+
+SQL for Beginners - MySQL Built-in Functions
+
+Built-in Functions and RDBMS Software
+There are several Built-in Functions in MySQL using which we can perform different operations on the different Table data like Text,Number,Date and Time
+MySQL Built-in Functions can be categorized into:
+String Functions
+Numeric Functions
+Date and Time Functions
+Aggregate Functions
+
+SQL for Beginners - upper() MySQL String Function
+
+One of the built-in functions of MySQL 
+Converts the text under the specified Column data to Upper Case
+Practical Demonstration
+Select upper('Arun Motoori');
+Select upper('Arun Motoori') AS FullName;
+Select * from Customers;
+Select Country from Customers;
+Select upper(Country) from Customers;
+Select upper(Country) AS Country from Customers;
+Select upper(Country) AS Country,City from Customers;
+Select upper(Country) AS Country,upper(City) from Customers;
+Select upper(Country) AS Country,upper(City) AS City from Customers;
+
+
+SQL for Beginners - lower() MySQL String Function
+
+One of the built-in functions of MySQL 
+Converts the text under the specified Column data to Lower Case
+Practical Demonstration
+Select lower('Arun Motoori');
+Select lower('Arun Motoori') AS FullName;
+Select * from Customers;
+Select Country from Customers;
+Select lower(Country) from Customers;
+Select lower(Country) AS Country from Customers;
+Select lower(Country) AS Country,City from Customers;
+Select lower(Country) AS Country,lower(City) from Customers;
+Select lower(Country) AS Country,lower(City) AS City from Customers;
+
+SQL for Beginners - length() MySQL String Function
+
+One of the built-in functions of MySQL 
+Finds the size of the data under the specified Column
+Practical Demonstration
+Select 'Arun Motoori';
+Select length('Arun Motoori');
+Select length('Arun Motoori') AS GivenNameSize;
+Select * from Customers;
+Select Country from Customers;
+Select length(Country) from Customers;
+Select length(Country) AS SIZE from Customers;
+Select Country, length(Country) AS SIZE from Customers;
+Select * from Customers where length(Country)=6; 
+ 
+SQL for Beginners - instr() MySQL String Function
+
+One of the built-in functions of MySQL 
+Finds the position of the given text in the data of the specified Column
+Practical Demonstration
+Select 'Arun Motoori';
+Select instr('Arun Motoori','n');
+Select instr('Arun Motoori','n') AS Position;
+Select instr('Arun Motoori','ri') AS Position;
+Select * from Customers;
+Select Country from Customers;
+Select instr(Country,'e') from Customers;
+Select instr(Country,'e') AS Position from Customers;
+Select Country, instr(Country,'e') AS Position from Customers;
+
+QL for Beginners - substr() MySQL String Function
+
+One of the built-in functions of MySQL 
+Retrieves a portion of text from the data of the specified column
+Practical Demonstration
+Select 'Arun';
+Select substr('Arun',2,3);
+Select substr('Arun',2,3) AS Portion;
+Select substr('Arun',-3,2);
+Select substr('Arun',-3,2) As Portion;
+Select * from Customers;
+Select Country from Customers;
+Select substr(Country,2,4) from Customers;
+Select substr(Country,2,4) AS CountryPortion from Customers;
+Select Country, substr(Country,2,4) AS CountryPortion from Customers;
+
+
+One of the built-in functions of MySQL 
+Adds Two or More Table Column data together
+Practical Demonstration
+Select 'Arun';
+Select concat('Arun',' ','Motoori');
+Select concat('Arun',' ','Motoori') AS FullName;
+Select * from Employees;
+Select Concat(FirstName,' ',LastName) from Employees;
+Select Concat(FirstName,' ',LastName) AS FullName from Employees;
+Select FirstName,LastName,Concat(FirstName,' ',LastName) AS FullName from Employees;
+Select Concat('My full name is',' ',FirstName,' ',LastName) AS FullName from Employees;
+
+
+SQL for Beginners - trim() MySQL String Function
+
+One of the built-in functions of MySQL 
+Removes the leading and trailing spaces of the Column data
+Practical Demonstration
+Select 'Arun';
+Select '   Arun   ';
+Select length('   Arun   ');
+Select length(trim('   Arun   '));
+Select trim(ColumnName) from TableName;
+Other MySQL String Category functions
+
+SQL for Beginners - abs() MySQL Numeric Function
+
+One of the built-in functions of MySQL
+Returns the positive values irrespective of the given positive or negative number data in the specified column
+Practical Demonstration
+Select 9;
+Select -9;
+Select abs(9);
+Select abs(-9);
+Inserting a new record into Products table and applying abs on price
+
+One of the built-in functions of MySQL
+Returns the reminder value of the numeric data of the specified column
+Practical Demonstration
+Select 9;
+Select mod(9,4);
+Select * from OrderDetails;
+Select Quantity,mod(Quantity,3) from OrderDetails;
+
+One of the built-in functions of MySQL
+Returns the greatest and least values of the given numeric values
+Practical Demonstration
+Select greatest(88,64,123,97,3,100);
+Select least(88,64,123,97,3,100);
+Select greatest('Arun','Varun','Tharun');
+Select least('Arun','Varun','Tharun');
+
+Built-in function of MySQL
+truncate() - Returns the numerical values with the allowed number of digits after decimal point
+Practical Demonstration
+Select truncate(123.4567,2);
+Select truncate(123.4567,3);
+Select truncate(123.4567,6);
+Select truncate(123.4567,0);
+Select truncate(123.4567,-2);
+SELECT truncate(Price,5) FROM Products;
+
+Practical Demonstration
+Select power(3,4);
+Select sqrt(2);
+
+Practical Demonstration
+Select current_date();
+Select curdate();
+Select current_time();
+Select curtime();
+select now();
+select sysdate();
+     
+
+Practical Demonstration
+Select year('2020-04-25');
+Select month('2020-04-25');
+Select day('2020-04-25');
+Select monthname('2020-04-25');
+Select dayname('2020-04-25');
+SELECT * FROM Orders where month(OrderDate)=4;
+SELECT * FROM Orders where monthname(OrderDate)='May';
+
+Practical Demonstration
+Select avg(price) from Products;
+Select min(price) from Products;
+Select max(price) from Products;
+Select count(*) from Products;
+Select sum(price) from Products;
+
+The below are the different Arithmetic Operators we can use in the SQL Statements:
+Addition (+)
+Subtraction (-)
+Multiplication (*)
+Division (/)
+Modulus (%)
+Practical Demonstration:
+Select 5+4;
+Select 5-4;
+Select 5*4;
+Select 5/4;
+Select 5%4;
+Select Price, Price+10 from Products;
+Select Price, Price - 10 from Products;
+Select Price, Price * 10 from Products;
+Select Price, Price / 10 from Products;
+Select Price, Price % 10 from Products; 
+
+Many more Aggregate functions
+
+
+
+
+Many more Date and Time functions
+     
+
+
+
+
+
+
+Many other MySQL Numeric Functions
